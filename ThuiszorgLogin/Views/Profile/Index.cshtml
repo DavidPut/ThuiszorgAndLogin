@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ThuiszorgLogin.Models.Profile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Profiel</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+ @foreach (var item in Model) {   
+               @Html.Label("Voornaam") 
+               @Html.DisplayFor(modelItem => item.firstName) <br />
+
+               @Html.Label("Achternaam")
+               @Html.DisplayFor(modelItem => item.lastName) <br />
+
+               @Html.Label("Email")
+               @Html.DisplayFor(modelItem => item.email) <br />
+
+               @Html.Label("Woonplaats")  
+               @Html.DisplayFor(modelItem => item.city) <br />
+     
+               @Html.Label("Straat")
+               @Html.DisplayFor(modelItem => item.street) <br />
+
+               @Html.Label("Huisnummer") 
+               @Html.DisplayFor(modelItem => item.homeNumber) <br />
+       
+               @Html.Label("Huisnummer extra") 
+               @Html.DisplayFor(modelItem => item.homeNumberExtra) <br />
+        
+               @Html.Label("Telefoonnummer (vast)") 
+               @Html.DisplayFor(modelItem => item.homeTelephone) <br />
+       
+               @Html.Label("Telefoonnummer (mobiel)") 
+               @Html.DisplayFor(modelItem => item.mobileTelephone) <br />
+
+               @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+               @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+               @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+ }
+
+        
+    

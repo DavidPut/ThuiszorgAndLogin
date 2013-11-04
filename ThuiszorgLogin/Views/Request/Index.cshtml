@@ -1,0 +1,115 @@
+﻿@model IEnumerable<ThuiszorgLogin.Models.Request>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Taak toevoegen", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.Label("Naam")
+        </th>
+        <th>
+            
+        </th>
+        <th>
+             @Html.Label("Taak")
+        </th>
+        <th>
+            
+             
+           
+        </th>
+        <th>
+              <th>
+             
+        </th>
+        <th>
+             @Html.Label("Toegevoegd om")
+        </th>
+        <th>
+
+             </th>
+        <th>
+             @Html.Label("Hulp nodig om")
+        </th>
+        <th>
+             
+        </th>
+        <th>
+            @Html.Label("Status")
+        </th>
+             <th>
+             
+        </th>
+        <th>
+            @Html.Label("Geaccepteerd")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.user)
+        </td>
+        <td>
+          
+        </td>
+        <td>
+              @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+          
+            
+        </td>
+        <td>
+              <td>
+          
+        <td>
+             @Html.DisplayFor(modelItem => item.dateAndTimeAdded)
+      
+        </td>
+        <td>
+           
+        </td>
+          <td>
+             @Html.DisplayFor(modelItem => item.timeRequest)
+      
+        </td>
+        <td>
+           
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.completed)
+        </td>
+
+        <td>
+           
+        </td>
+        <td>
+            @if (item.accept == true)
+            { <p>Geaccepteerd door een van onze vrijwilligers!</p>}
+            else
+            {<p> Nog niet geaccepteerd door een van onze vrijwilligers</p><br />}
+             
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |
+            @Html.ActionLink("Accept", "Accept", new { id = item.ID }) 
+
+        </td>
+    </tr>
+    
+    
+}
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model ThuiszorgLogin.Models.Request
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+ <fieldset>
+    <legend></legend>
+
+    <div class="display-label">
+         <b>@Html.Label("Naam")</b>
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.user)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.Label("Taak")</b>
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.title)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.Label("Beschrijving")</b>
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.Label("Hulp nodig om")</b>
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.dateAndTimeRequest)
+    </div>
+
+     <div class="display-label">
+         <b>@Html.Label("Tijd")</b>
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.timeRequest)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.Label("Toegevoegd om")</b> 
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.dateAndTimeAdded)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.Label("Status")</b>
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.completed)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

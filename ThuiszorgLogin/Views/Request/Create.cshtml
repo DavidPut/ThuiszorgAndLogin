@@ -1,0 +1,83 @@
+﻿@model ThuiszorgLogin.Models.Request
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Request</legend>
+        
+        <div class="editor-label">
+             @Html.Label("Naam")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.user)
+            @Html.ValidationMessageFor(model => model.user)
+        </div>
+
+        <div class="editor-label">
+             @Html.Label("Taak")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.title)
+            @Html.ValidationMessageFor(model => model.title)
+        </div>
+
+        <div class="editor-label">
+             @Html.Label("Beschrijving")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.description)
+            @Html.ValidationMessageFor(model => model.description)
+        </div>
+
+       
+        <div class="editor-label">
+            @Html.Label("Hulp nodig om")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model=> model.dateAndTimeRequest,"{0:d}", new {  @class = "datefield"})
+            @Html.ValidationMessageFor(model => model.dateAndTimeRequest)   
+            </div>
+
+     <div class="editor-label">
+             @Html.Label("Tijd")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.timeRequest)
+            @Html.ValidationMessageFor(model => model.timeRequest)
+        </div>
+            
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Terug naar taken overzicht", "Index")
+</div>
+
+
+
+
+@section Scripts{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.datepicker.setDefaults({ dateFormat: 'dd/mm/yy' });
+            $(".datefield").datepicker();
+        });
+    </script>
+}

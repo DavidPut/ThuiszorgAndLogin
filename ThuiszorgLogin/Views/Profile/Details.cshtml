@@ -1,0 +1,88 @@
+﻿@model ThuiszorgLogin.Models.Profile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Profile</legend>
+
+    <div class="display-label">
+          @Html.Label("Voornaam") 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.firstName)
+    </div>
+
+    <div class="display-label">         
+     @Html.Label("Achternaam")
+    </div>
+
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lastName)
+    </div>
+
+
+
+    <div class="display-label">         
+     @Html.Label("Email")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">         
+     @Html.Label("Woonplaats")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.city)
+    </div>
+
+    <div class="display-label">         
+     @Html.Label("Postcode")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zipcode)
+    </div>
+
+   <div class="display-label">         
+     @Html.Label("Straat")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.street)
+    </div>
+
+   <div class="display-label">         
+     @Html.Label("Huisnummer")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.homeNumber)
+    </div>
+
+    <div class="display-label">         
+     @Html.Label("Huisnummer extra")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.homeNumberExtra)
+    </div>
+
+    <div class="display-label">         
+     @Html.Label("Telefoonnummer (vast)")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.homeTelephone)
+    </div>
+
+    <div class="display-label">         
+     @Html.Label("Telefoonnummer (mobiel)")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mobileTelephone)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
